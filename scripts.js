@@ -87,7 +87,7 @@ function login() {
         xmlhttp.send();
         $('#login-button-nav').css('display','none');
 				$('#logout-button-nav').css('display','inline-block');
-				lastVisit("dank");
+				lastVisit(username);
 				$('#last-visited').css('visibility', 'visible');
 				$('#loginModal').modal('hide');
 	}
