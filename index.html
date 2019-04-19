@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Really Simple Sports</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="scripts.js"></script>
+</head>
+<body id="root">
+	<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+		<a class="navbar-brand pr-2" href="#">Really Simple Sports</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    			<span class="navbar-toggler-icon"></span>
+  		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<form class="form-inline my-2 my-lg-o ml-auto">
+				<div class="form-check form-check-inline float-right">
+					<input class="form-check-input" type="checkbox" id="MLBCheckbox" value="MLB" onClick="feedAJAX()" checked>
+					<label class="form-check-label text-light" for="inlineCheckbox1">MLB</label>
+				</div>
+				<div class="form-check form-check-inline float-right">
+					<input class="form-check-input" type="checkbox" id="NBACheckbox" value="NBA" onClick="feedAJAX()" checked>
+					<label class="form-check-label text-light" for="inlineCheckbox2">NBA</label>
+				</div>
+				<div class="form-check form-check-inline float-right">
+					<input class="form-check-input" type="checkbox" id="NHLCheckbox" value="NHL" onClick="feedAJAX()" checked>
+					<label class="form-check-label text-light" for="inlineCheckbox3">NHL</label>
+				</div>
+			</form>
+			<span id="last-visited" class="navbar-text float-right" style="padding: 0 2rem; visibility: hidden;">
+			</span>
+			<button type="button" id="login-button-nav" class="btn btn-success" data-toggle="modal" data-target="#loginModal">
+				Login
+			</button>
+			<button type="button" id="logout-button-nav" class="btn btn-danger" onClick="logout()" style="display:none;">
+				Logout
+			</button>
+		</div>
+	</nav>
+	<div id="content">
+		<p>No content has been loaded.</p>
+	</div>
+	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Login to Really Simple Sports</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group mb-3">
+				  <div class="input-group-prepend">
+				    <span class="input-group-text" id="username-addon">Username:</span>
+				  </div>
+				  <input type="text" id="username-input" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="username-addon" required>
+				</div>
+				<div class="input-group mb-3">
+				  <div class="input-group-prepend">
+				    <span class="input-group-text" id="password-addon">Password:</span>
+				  </div>
+				  <input type="password" id="password-input" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon" required>
+				</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" onClick="login()">Login</button>
+      </div>
+    </div>
+  </div>
+	</div>
+</body>
+</html>
