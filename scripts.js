@@ -75,15 +75,21 @@ function login() {
 		var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-							/*$('#login-button-nav').css('display','none');
+            	console.log(this.responseText);
+							$('#login-button-nav').css('display','none');
 							$('#logout-button-nav').css('display','inline-block');
 							lastVisit("dank");
 							$('#last-visited').css('visibility', 'visible');
-							$('#loginModal').modal('hide');*/
+							$('#loginModal').modal('hide');
             }
         };
         xmlhttp.open("GET", "validate.php?username="+username+"&password="+password, true);
         xmlhttp.send();
+        $('#login-button-nav').css('display','none');
+				$('#logout-button-nav').css('display','inline-block');
+				lastVisit("dank");
+				$('#last-visited').css('visibility', 'visible');
+				$('#loginModal').modal('hide');
 	}
 }
 
